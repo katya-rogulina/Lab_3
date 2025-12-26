@@ -33,29 +33,32 @@ public class Zakaz {
     }
 
     public void oneAction() {
-        --this.steps;
+        --steps;
     }
 
     public int nActions(int n) {
-        if (this.steps > n) {
-            this.steps -= n;
+        if (steps > n) {
+            steps -= n;
             return 0;
         } else {
             int stepsLeft = n - this.steps;
-            this.steps = 0;
+            steps = 0;
             return stepsLeft;
         }
     }
 
     public String toString() {
-        return this.name + " - " + this.steps + " шагов";
+        return name + " - " + steps + " шагов";
     }
 
     public int getSteps() {
-        return this.steps;
+        return steps;
     }
 }
 ```
+Метод 'oneAction' выполняет одно действие, т.е. уменьшает количество этапов на один
+Метод 'nActions(int n)' выполняет n действий, т.е. уменьшает количество этапов на n
+
 ### Создание класса Rest
 ```java
 public class Rest {
